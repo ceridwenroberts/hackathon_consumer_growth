@@ -88,13 +88,30 @@
 *{
 	box-sizing: border-box;
 }
+
+html,
 body {
-	
-    font-family: var(--font-body);
-	font-weight: 300;
-	-webkit-font-smoothing: antialiased;
-	display: flex;
-	flex-direction: column;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  min-height: 100vh;
+  background-color: #05363B;
+  background-image: url("/assets/3ccc7.png");
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 100% auto;
 }
 
 h1,
