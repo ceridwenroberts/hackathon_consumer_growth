@@ -1,8 +1,8 @@
-const Library =( )=> {
+const MyWork =( )=> {
     return(
         <>
-        <h1>Library page</h1>
+        <h1>MyWork page</h1>
         </>
     )
 }
-export default Library;
+export default MyWork;
