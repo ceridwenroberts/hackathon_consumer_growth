@@ -1,15 +1,19 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Manjari } from "next/font/google"
+import localFont from "next/font/local"
 import "./globals.css"
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
+const manjari = Manjari({
 	subsets: ["latin"],
+	weight: ["100", "400", "700"],
+	variable: "--next-font-manjari",
+	display: "swap",
 })
 
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
-	subsets: ["latin"],
+const realce = localFont({
+	src: "../public/fonts/realce-black.otf",
+	variable: "--next-font-realce",
+	display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -21,9 +25,9 @@ export default function RootLayout({ children, modal }: LayoutProps<"/">) {
 	return (
 		<html
 			lang='en'
-			className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+			className={`${manjari.variable} ${realce.variable} h-full antialiased`}
 		>
-			<body className='min-h-full flex flex-col'>
+			<body className='max-h-dvh h-dvh min-h-screen flex flex-col'>
 				{children}
 				{modal}
 			</body>

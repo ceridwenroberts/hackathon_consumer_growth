@@ -230,3 +230,13 @@ h1 {
 	}
 }
 
+/* Dashboard */
+
+.dashboard {
+	width: 100%;
+	max-width: 1434px;
+	margin: 0 auto;
+	font-family: "Inter:Regular", Inter, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+}
