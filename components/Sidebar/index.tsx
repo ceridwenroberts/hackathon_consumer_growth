@@ -25,7 +25,7 @@ const Sidebar = () => {
                 href={item.href}
                 title={item.name}
                 style={{ fontSynthesis: "none" }}
-                className={`group/link relative mb-1 flex min-h-12 w-full items-center justify-center gap-3 rounded-[7px] p-3 text-left font-['Inter'] text-base leading-normal transition-all duration-200 ease-out md:justify-start ${
+                className={`group/link relative mb-1 flex min-h-12 w-full items-center justify-center gap-3 rounded-[7px] p-3 text-left font-['Inter'] text-xl leading-normal transition-all duration-200 ease-out md:justify-start ${
                   isActive
                     ? "bg-[#233736] font-bold text-[#68e7d9]"
                     : "bg-transparent font-normal text-[#e7e7e7] hover:bg-[#233736]/60 hover:text-[#68e7d9] md:hover:translate-x-1"
