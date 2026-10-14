@@ -1,35 +1,240 @@
 @import "tailwindcss";
 
+@font-face {
+	font-family: "Realce Black";
+	src: url("/fonts/realce-black.otf") format("opentype");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
 :root {
-	--background: #ffffff;
-	--foreground: #334155;
+	--font-title: var(--next-font-realce);
+	--font-body: var(--next-font-manjari);
+
+	--color-near-black: #002c33;
+	--color-dark-grey: #1d2129;
+	--color-mid-gray: #8f8e93;
+	--color-light-gray: #e7e7e7;
+	--color-white: #ffffff;
+	--color-green: #52ece1;
+	--color-pink: #f29de1;
+	--color-orange: #fa813a;
+	--color-yellow: #fbe95f;
+
+	/* Typography */
+	--font-title: var(--next-font-realce);
+	--font-body: var(--next-font-manjari);
 }
 
 @theme {
-	/* Primary: teal */
-	--color-primary: #2dd4bf;
-	--color-primary-foreground: #134e4a;
+	--color-font-primary: var(--color-foreground);
+	--color-font-secondary: var(--color-accent);
 
-	/* Secondary: rose */
-	--color-secondary: #fda4af;
-	--color-secondary-foreground: #881337;
+	/* Palette variables */
+	--color-base-dark: var(--color-near-black);
+	--color-base-light: var(--color-white);
 
-	/* Supporting colours */
-	--color-muted: #f0fdfa;
-	--color-muted-foreground: #64748b;
-	--color-border: #e2e8f0;
-	--color-error: #e11d48;
+	--color-primary-dark: var(--color-dark-grey);
+	--color-primary-mid: var(--color-mid-gray);
+	--color-primary-light: var(--color-light-gray);
+
+	--color-secondary: var(--color-green);
+	--color-accent: var(--color-pink);
+
+	/* Support colors - use sparingly */
+	--color-support-pink: var(--color-pink);
+	--color-support-orange: var(--color-orange);
+	--color-support-yellow: var(--color-yellow);
+
+	/* Colors */
+	--color-background: var(--color-near-black);
+	--color-foreground: var(--color-white);
+
+	--color-muted-background: var(--color-primary-mid);
+	--color-muted-foreground: var(--color-primary-light);
+
+	/* Semantic colors */
+	--color-error: var(--color-support-orange);
+	--color-warning: var(--color-support-yellow);
+
+	/* Border colors */
+	--color-border-default: var(--color-base-light);
+	--color-border-secondary: var(--color-secondary);
 }
 
 @theme inline {
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
 }
 
+/* Custom utilities */
+
+@utility border-default {
+	border: 1px solid var(--color-border-default);
+}
+
+/* Surface borders: Cards, panels, divider, around other surfaces. */
+@utility border-surface {
+	border: 1px solid var(--color-border-default);
+}
+
+/* Components CSS */
+
 body {
-	background: var(--background);
-	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+	background:
+		radial-gradient(
+			52vw 46vw at 10% -8%,
+			rgba(82, 236, 225, 0.13),
+			transparent 60%
+		),
+		radial-gradient(
+			36vw 34vw at 104% 4%,
+			rgba(242, 157, 225, 0.07),
+			transparent 60%
+		),
+		radial-gradient(
+			40vw 36vw at 58% 116%,
+			rgba(251, 233, 95, 0.05),
+			transparent 62%
+		),
+		#1a1a1a;
+	background-attachment: fixed;
+	color: var(--color-foreground);
+	font-family: var(--font-body);
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+	display: flex;
+	flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-title);
+}
+
+h1 {
+	text-transform: uppercase;
+}
+
+.card {
+	border: 1px solid var(--color-border-default);
+}
+
+.btn {
+	display: inline-block;
+	border-radius: 999px;
+	font-weight: 600;
+	cursor: pointer;
+	transition:
+		transform 0.18s ease,
+		box-shadow 0.18s ease,
+		border-color 0.18s ease,
+		color 0.18s ease;
+}
+
+.border-thin {
+	border: 1px solid;
+}
+
+/* Hero */
+
+.hero-headline {
+	font-family: var(--font-title);
+	white-space: nowrap;
+	text-shadow: 0 6px 16px rgb(0 0 0 / 30%);
+}
+
+.hero-headline-alt {
+	position: relative;
+	display: inline-block;
+	color: transparent;
+	text-shadow: 0 6px 16px rgb(0 0 0 / 30%);
+}
+
+.hero-headline-alt::after {
+	content: "ANYWHERE";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(90deg, #52ece1 0%, #1ed7c9 48%, #f29de1 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	text-shadow: none;
+	filter: saturate(1.45);
+}
+
+@media (max-width: 620px) {
+	.hero-headline-alt {
+		display: block;
+	}
+}
+
+.hero-cta {
+	position: relative;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	isolation: isolate;
+	box-sizing: border-box;
+	border: 1px solid rgb(255 255 255 / 52%);
+	border-radius: 999px;
+	background: #72e8e1;
+	padding: 18px 28px;
+	text-align: center;
+	color: #0c0f14;
+	font-size: 1.28rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-shadow: 0 1px 0 rgb(255 255 255 / 35%);
+	box-shadow:
+		inset 0 1px 0 rgb(255 255 255 / 70%),
+		inset 0 -7px 14px rgb(24 115 139 / 18%),
+		0 0 14px 4px rgb(82 236 225 / 42%),
+		0 10px 28px rgb(82 236 225 / 26%);
+	transition:
+		transform 180ms ease,
+		filter 180ms ease;
+}
+
+.hero-cta::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	border-radius: inherit;
+	background:
+		radial-gradient(
+			ellipse 48% 130% at 7% -35%,
+			rgb(255 255 255 / 80%),
+			transparent 58%
+		),
+		radial-gradient(
+			ellipse 40% 100% at 84% 130%,
+			rgb(255 255 255 / 50%),
+			transparent 62%
+		),
+		linear-gradient(
+			106deg,
+			transparent 22%,
+			rgb(255 255 255 / 34%) 45%,
+			transparent 61%
+		);
+	mix-blend-mode: screen;
+	pointer-events: none;
+}
+
+.hero-cta:hover {
+	transform: translateY(-1px);
+	filter: brightness(1.06) saturate(1.08);
+}
+
+.hero-cta:focus-visible {
+	outline: 2px solid white;
+	outline-offset: 4px;
+}
+
+@media (max-width: 360px) {
+	.hero-cta {
+		padding: 13px 24px;
+	}
 }
