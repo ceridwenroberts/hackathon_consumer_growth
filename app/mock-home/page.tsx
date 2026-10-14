@@ -12,7 +12,9 @@ import { Textarea } from "@/components/ui/Textarea"
 
 const MockHome = () => {
 	return (
-		<main>
+		<>
+	
+	
 			<Container>
 				<Section
 					title='(Section) Dashboard'
@@ -106,7 +108,7 @@ const MockHome = () => {
 					</Section>
 				</Section>
 			</Container>
-		</main>
+		</>
 	)
 }
 
