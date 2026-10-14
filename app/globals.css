@@ -22,10 +22,13 @@
 	--color-orange: #fa813a;
 	--color-yellow: #fbe95f;
 
+	--color-dark-side: #111518;
+
 	/* Typography */
 	--font-title: var(--next-font-realce);
 	--font-body: var(--next-font-manjari);
 }
+
 
 @theme {
 	--color-font-primary: var(--color-foreground);
@@ -64,7 +67,10 @@
 }
 
 @theme inline {
+
+  --color-base-darker: var(--color-dark-side);
 }
+
 
 /* Custom utilities */
 
@@ -79,27 +85,12 @@
 
 /* Components CSS */
 
+*{
+	box-sizing: border-box;
+}
 body {
-	background:
-		radial-gradient(
-			52vw 46vw at 10% -8%,
-			rgba(82, 236, 225, 0.13),
-			transparent 60%
-		),
-		radial-gradient(
-			36vw 34vw at 104% 4%,
-			rgba(242, 157, 225, 0.07),
-			transparent 60%
-		),
-		radial-gradient(
-			40vw 36vw at 58% 116%,
-			rgba(251, 233, 95, 0.05),
-			transparent 62%
-		),
-		#1a1a1a;
-	background-attachment: fixed;
-	color: var(--color-foreground);
-	font-family: var(--font-body);
+	
+    font-family: var(--font-body);
 	font-weight: 300;
 	-webkit-font-smoothing: antialiased;
 	display: flex;
