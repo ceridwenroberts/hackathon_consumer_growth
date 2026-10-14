@@ -1,6 +1,7 @@
 "use client"
 
 import SignUpForm from "@/components/forms/SignUpForm"
+import SignUpModal from "@/components/forms/signUpModal"
 import { Button } from "@/components/ui/Button"
 import Modal from "@/components/ui/Modal"
 import { useState } from "react"
@@ -11,7 +12,8 @@ const SignUpPage = () => {
 
     return (
         <>
-            <Button className="primary" onClick= {() => setIsOpen(true)}>
+        <SignUpModal />
+            {/* <Button className="primary" onClick= {() => setIsOpen(true)}>
                     Signup
              </Button>
             <Modal
@@ -20,7 +22,7 @@ const SignUpPage = () => {
                     title="Create Account"
             >
                 <SignUpForm onSuccess={handleClose} />
-            </Modal >
+            </Modal > */}
          </>
         )
 }
