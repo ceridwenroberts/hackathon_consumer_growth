@@ -1,7 +1,9 @@
-## Customer Growth Hackathon
+# Futuregames Customer Growth Hackathon Oct 2026
 
-Futuregames Customer Growth Hackathon
-13 & 15 October 2026 | Online
+### Brief and prototypes in ./anitya-docs/
+
+## Hackathon Challenge Description
+Futuregames 13 & 15 October 2026 | Online
 A real company challenge. A real team. A real opportunity to be seen.
 In January 2027, many of you will begin your LIA period.
 The current market is challenging, and we believe that Futuregames has a responsibility
@@ -168,6 +170,3 @@ TEAM 10
 • Ceridwen (Utvecklare)
 • Souad (Utvecklare)
 • Timmy (Designer)
-• Sevan (Designer)
-• Alexandra (Designer)
-• Bettiel (Designer)
