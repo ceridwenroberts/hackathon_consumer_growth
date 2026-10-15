@@ -167,6 +167,6 @@ How the hackathon works
    Vercel or another suitable platform
 
 TEAM 10
-• Ceridwen (Utvecklare)
-• Souad (Utvecklare)
+• Ceridwen (Developer)
+• Souad (Developer)
 • Timmy (Designer)
