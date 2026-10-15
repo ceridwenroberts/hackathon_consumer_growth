@@ -1,7 +1,5 @@
 # Futuregames Customer Growth Hackathon Oct 2026
 
-### Brief and prototypes in ./anitya-docs/
-
 ## Hackathon Challenge Description
 Futuregames 13 & 15 October 2026 | Online
 A real company challenge. A real team. A real opportunity to be seen.
